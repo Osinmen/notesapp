@@ -17,6 +17,7 @@ class Assets {
   static const AssetGenImage add = AssetGenImage('assets/add.png');
   static const AssetGenImage back = AssetGenImage('assets/back.png');
   static const AssetGenImage check = AssetGenImage('assets/check.png');
+  static const AssetGenImage edit = AssetGenImage('assets/edit.png');
   static const AssetGenImage infoOutline = AssetGenImage(
     'assets/info_outline.png',
   );
@@ -32,6 +33,7 @@ class Assets {
     add,
     back,
     check,
+    edit,
     infoOutline,
     rafiki,
     save,

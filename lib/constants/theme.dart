@@ -5,17 +5,19 @@ import 'package:notesapplication/constants/custom_text_theme.dart';
 final ThemeData lightTheme = ThemeData(
   useMaterial3: true,
   primaryColor: Colors.black,
+  primaryColorLight: Colors.white,
   appBarTheme: AppBarTheme(
     backgroundColor:  Colors.white,
   ),
   scaffoldBackgroundColor: Appcolors.primaryLightModeColor,
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: Colors.deepPurple,
+    backgroundColor: Appcolors.primaryLightModeColor,
   ),
   textTheme: customTextTheme(Appcolors.lightThemeText)
 );
 
 final ThemeData darkTheme = ThemeData(
+  primaryColorLight: Colors.black,
   primaryColor: Colors.white,
   scaffoldBackgroundColor: Appcolors.primaryDarkModeColor,
   floatingActionButtonTheme: const FloatingActionButtonThemeData(

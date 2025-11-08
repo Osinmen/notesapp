@@ -3,7 +3,7 @@ import 'package:notesapplication/constants/theme.dart';
 import 'package:notesapplication/providers/note_colour_provider.dart';
 import 'package:notesapplication/providers/notes_provider.dart';
 import 'package:notesapplication/providers/theme_provider.dart';
-import 'package:notesapplication/screens/edit_notes_screen.dart';
+import 'package:notesapplication/screens/add_notes_screen.dart';
 import 'package:notesapplication/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: Provider.of<ThemeProvider>(context).isDarkMode ? ThemeMode.dark : ThemeMode.light,
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );

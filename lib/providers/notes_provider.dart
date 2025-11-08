@@ -43,4 +43,13 @@ class NotesProvider extends ChangeNotifier {
     notifyListeners();
     await saveNotes();
   }
+
+  Future<void> updateNote(Notes oldNote, Notes updatedNote) async {
+    final index = _notes.indexOf(oldNote);
+    if (index != -1) {
+      _notes[index] = updatedNote; // Replace old note
+      notifyListeners();           
+      await saveNotes();          
+    }
+  }
 }

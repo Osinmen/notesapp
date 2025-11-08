@@ -15,7 +15,7 @@ class CircularIconButton extends StatelessWidget {
           color: Color(0XFF3B3B3B), 
           borderRadius: BorderRadius.circular(15), 
         ),
-        child: Image.asset(imagePath, color: Theme.of(context).primaryColor,),
+        child: Image.asset(imagePath, color: Colors.white,),
       ),
     );
   }

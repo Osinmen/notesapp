@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notesapplication/gen/assets.gen.dart';
-import 'package:notesapplication/screens/edit_notes_screen.dart';
+import 'package:notesapplication/screens/add_notes_screen.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});
@@ -14,7 +14,7 @@ class CustomFloatingActionButton extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return EditNotesScreen();
+              return AddNotesScreen();
             },
           ),
         );
