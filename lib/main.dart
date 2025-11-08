@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notesapplication/constants/theme.dart';
+import 'package:notesapplication/providers/note_colour_provider.dart';
 import 'package:notesapplication/providers/notes_provider.dart';
 import 'package:notesapplication/providers/theme_provider.dart';
 import 'package:notesapplication/screens/edit_notes_screen.dart';
@@ -20,6 +21,9 @@ void main() {
             return NotesProvider();
           },
         ),
+        ChangeNotifierProvider(create: (context) {
+          return NoteColorProvider();
+        })
       ],
       child: const MyApp(),
     ),

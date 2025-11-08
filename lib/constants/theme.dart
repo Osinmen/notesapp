@@ -12,7 +12,6 @@ final ThemeData lightTheme = ThemeData(
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
     backgroundColor: Colors.deepPurple,
   ),
-  cardColor: Colors.white,
   textTheme: customTextTheme(Appcolors.lightThemeText)
 );
 

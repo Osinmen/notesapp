@@ -5,12 +5,12 @@ class Notes {
 
   Notes({required this.title, required this.notesContents});
 
-  factory Notes.fromJson(Map<String, dynamic> json) {
-    return Notes(
-      title: json['title'],
-      notesContents: json['notesContents'],
-    );
-  }
+ factory Notes.fromJson(Map<String, dynamic> json) {
+  return Notes(
+    title: json['title']?.toString() ?? '',
+    notesContents: json['notesContents']?.toString() ?? '',
+  );
+}
 
   Map<String, dynamic> toJson() {
     return {

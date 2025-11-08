@@ -4,6 +4,7 @@ import 'package:notesapplication/custom_widgets/custom_appbar.dart';
 import 'package:notesapplication/custom_widgets/custom_floating_action_button.dart';
 import 'package:notesapplication/custom_widgets/notes_card.dart';
 import 'package:notesapplication/gen/assets.gen.dart';
+import 'package:notesapplication/providers/note_colour_provider.dart';
 import 'package:notesapplication/providers/notes_provider.dart';
 import 'package:notesapplication/utils/spacing_extensions.dart';
 import 'package:provider/provider.dart';
@@ -43,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   : ListView.builder(
                       itemCount: notesProvider.notes.length,
                       itemBuilder: (context, index) {
+                        final color = context.watch<NoteColorProvider>();
                         final note = notesProvider.notes[index];
                         return Dismissible(
                           onDismissed: (_) {
@@ -51,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           direction: DismissDirection.endToStart,
                           key: Key(note.title + note.notesContents),
                           child: NotesCard(
+                            color: color.getColorAt(index),
                             title: note.title,
                             description: note.notesContents,
                           ),

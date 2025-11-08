@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class NotesCard extends StatelessWidget {
   String title;
   String description;
+  
   NotesCard({super.key, required this.title, required this.description});
 
   @override
