@@ -65,7 +65,7 @@ class _EditNotesScreenState extends State<EditNotesScreen> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text("saved succesfully!!"),
-                    duration: const Duration(milliseconds: 300),
+                    duration: const Duration(milliseconds: 300 ),
                     backgroundColor: Colors.green,
                   ),
                 );
