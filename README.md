@@ -1,16 +1,57 @@
-# notesapplication
+Notes Application
 
-A new Flutter project.
+A Flutter-based notes application that allows users to create, read, edit, and delete notes. The app supports dark and light themes, persistent storage using SharedPreferences, and a responsive, reusable UI design.
 
-## Getting Started
+Features
 
-This project is a starting point for a Flutter application.
+Create Notes: Add new notes with a title and content.
 
-A few resources to get you started if this is your first Flutter project:
+Read Notes: View full notes with scrolling support.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Edit Notes: Edit existing notes, with changes reflected instantly.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Delete Notes: Swipe to delete notes using Dismissible.
+
+Persistent Storage: Notes are saved locally using SharedPreferences.
+
+Theming: Switch between light and dark modes.
+
+Reusable Components: Circular icon buttons, back buttons, floating action buttons, and text fields for consistency.
+
+
+Screens
+
+Home Screen:
+
+Shows a list of saved notes in cards.
+
+Floating action button to add a new note.
+
+Note Details Screen:
+
+Displays note title and content.
+
+Edit button navigates to Edit Notes Screen.
+
+Edit Notes Screen:
+
+Allows editing note title and content.
+
+Save button updates the note in the provider and persists changes.
+
+Theme Settings Page:
+
+Toggle switch to switch between light and dark themes.
+
+Persists theme choice using SharedPreferences.
+
+Dependencies
+
+provider
+ — State management.
+
+shared_preferences
+ — Persistent storage.
+
+flutter_gen
+ — Asset generation.
