@@ -1,16 +1,26 @@
-# notesapplication
+Approach
 
-A new Flutter project.
+UI Design
+The UI is designed using Flutter’s built-in widgets.
+The home screen displays a list of notes. Each note can be tapped to view its details and edited when necessary.
+A floating action button is provided to add new notes, and swipe-to-delete functionality is used to remove notes.
 
-## Getting Started
+State Management
+The app uses the Provider package for state management.
+The NotesProvider class handles all note-related logic, including adding, editing, deleting, and persisting notes.
 
-This project is a starting point for a Flutter application.
+Data Persistence
+The app uses SharedPreferences to persist data locally.
+Notes are converted to JSON strings and stored in a list. When the app restarts, they are retrieved and deserialized back into note objects.
 
-A few resources to get you started if this is your first Flutter project:
+Theme Management
+The app uses a separate ThemeProvider to manage light and dark themes.
+The current theme state is also saved using SharedPreferences to ensure persistence between sessions.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Clean Code Structure
+Custom widgets such as CircularIconButton, CustomAppBar, and CustomFloatingActionButton are used to maintain consistency and readability.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Tools and Libraries Used
+provider	State management
+shared_preferences	Data persistence
+material.dart	UI components
