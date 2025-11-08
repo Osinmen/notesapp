@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
+import 'package:notesapplication/custom_widgets/back_button_widget.dart';
 import 'package:notesapplication/custom_widgets/circular_icon_button.dart';
 import 'package:notesapplication/custom_widgets/content_text_field.dart';
 import 'package:notesapplication/custom_widgets/title_text_field.dart';
@@ -23,33 +24,33 @@ class _AddNotesScreenState extends State<AddNotesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 70,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 15),
-          child: CircularIconButton(imagePath: Assets.back.path, onTap: () {
-            Navigator.pop(context);
-          }),
-        ),
+        leading: BackButtonWidget(),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15),
-            child: CircularIconButton(
-              imagePath: Assets.save.path,
-              onTap: () {
-                final title = titleController.text.trim();
-                final content = contentController.text.trim();
-                if (title.isNotEmpty && content.isNotEmpty) {
-                  Provider.of<NotesProvider>(context, listen: false).addNotes(title, content);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      duration: Duration(milliseconds: 300),
-                      backgroundColor: Colors.green,
-                      content: Text('Note saved!'),
-                    ),
-                  );
-                }
-              },
+          GestureDetector(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 15),
+              child: Text(
+                "Save",
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
             ),
+            onTap: () {
+              final title = titleController.text.trim();
+              final content = contentController.text.trim();
+              if (title.isNotEmpty && content.isNotEmpty) {
+                Provider.of<NotesProvider>(
+                  context,
+                  listen: false,
+                ).addNotes(title, content);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    duration: Duration(milliseconds: 300),
+                    backgroundColor: Colors.green,
+                    content: Text('Note saved!'),
+                  ),
+                );
+              }
+            },
           ),
         ],
       ),
@@ -58,9 +59,10 @@ class _AddNotesScreenState extends State<AddNotesScreen> {
           20.height,
           TitleTextField(controller: titleController),
           25.height,
-          ContentTextField(controller: contentController,),
+          ContentTextField(controller: contentController),
         ],
       ),
     );
   }
 }
+

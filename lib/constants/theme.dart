@@ -17,7 +17,6 @@ final ThemeData lightTheme = ThemeData(
 );
 
 final ThemeData darkTheme = ThemeData(
-  primaryColorLight: Colors.black,
   primaryColor: Colors.white,
   scaffoldBackgroundColor: Appcolors.primaryDarkModeColor,
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
