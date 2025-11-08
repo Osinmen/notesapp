@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:notesapp/constants/theme.dart';
-import 'package:notesapp/providers/notes_provider.dart';
-import 'package:notesapp/providers/theme_provider.dart';
-import 'package:notesapp/screens/home_screen.dart';
+import 'package:notesapplication/constants/theme.dart';
+import 'package:notesapplication/providers/notes_provider.dart';
+import 'package:notesapplication/providers/theme_provider.dart';
+import 'package:notesapplication/screens/edit_notes_screen.dart';
+import 'package:notesapplication/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -34,10 +35,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: Provider.of<ThemeProvider>(context, listen: false).isDarkMode
-          ? ThemeMode.dark
-          : ThemeMode.light,
-      home: const HomeScreen()
+      themeMode: ThemeMode.dark,
+      home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
